@@ -10,4 +10,4 @@ Synopsis: One of the biggest problems in the medical field is the issue of cross
 Components:
 1. Leap interface - Using the Leap API, data will be provided to the main program, allowing the interface to be controlled by the hands. This controller (in C#) will proivde the correct interpretation of specific hand gestures and actions.
 2. Background Application - Either in Unity or on the Windows platform. Where we actually do stuff with the controller.
-3. Particular Apps - Image manipulation, document reading
+3. Particular Apps - Image manipulation, document reading, other things? Please ideas people!
