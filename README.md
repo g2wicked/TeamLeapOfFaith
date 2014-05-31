@@ -30,7 +30,7 @@ Need to build
 File Structure for User Case Patient Database
 
 Directory contains one folder for each Patient. Patient folders have naming convention:
-Patient [Patient#] - [Lastname],[Firstname]
+Patient-[Patient#]-[Lastname],[Firstname]
 
 In each Patient folder, there are a number of items.
 In every Patient folder, there will be a text file named: content.txt
@@ -40,7 +40,7 @@ In each Patient folder, there will be two files called PatientHistory.docx, and 
 
 Additional folders may be included, indicating specific dates of record in the following format: History-[mm-dd-yyyy]
 The folder for a specified date can contain any number of files, all in pdf format. These can include:
-xray-[body region]-[Doctor Lastname], [Doctor Firstname]-[mm-dd-yyyy].pdf
+xray-[body region]-[Doctor Lastname],[Doctor Firstname]-[mm-dd-yyyy].pdf
 catscan-[body region]-[Doctor Lastname],[Doctor Firstname]-[mm-dd-yyyy].pdf
 notes-[Doctor Lastname],[Doctor Firstname]-[mm-dd-yyyy].pdf
 ultrasound-[body region]-[Doctor Lastname],[Doctor Firstname]-[mm-dd-yyyy].pdf
