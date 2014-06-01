@@ -141,10 +141,6 @@ class PaintBox(Frame):
         self.paintCanvas.pack()
         self.painter.set_canvas(self.paintCanvas)
 
-        # create second Canvas component
-        self.backgroundCanvas = Canvas( self, width = screenWidth, height = screenHeight)
-        self.paintCanvas.pack()
-        self.painter.set_canvas(self.paintCanvas)
 
 root = Tk()
 im = Image.open('images/leatherBackground.png')
