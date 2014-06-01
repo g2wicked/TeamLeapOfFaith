@@ -9,9 +9,10 @@ Library/cache/
 Library/previews/
 Library/ScriptAssemblies
 
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
+# ===================================================== #
+# Visual Studio / MonoDevelop / IntelliJ Idea generated #
+# ===================================================== #
+.idea/
 ExportedObj/
 *.svd
 *.userprefs
@@ -22,6 +23,7 @@ ExportedObj/
 *.user
 *.unityproj
 *.booproj
+*.pyc
 
 # ============ #
 # OS generated #
