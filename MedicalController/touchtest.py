@@ -1,6 +1,8 @@
 __author__ = 'Zach'
 
-from Tkinter import Frame, Canvas, YES, BOTH
+import Tkinter
+from Tkinter import Frame, Canvas, YES, BOTH, Tk
+from PIL import Image, ImageTk
 import sys
 import Leap
 from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
@@ -59,8 +61,10 @@ class TouchPointListener(Leap.Listener):
                 # Determine clock direction using the angle between the pointable and the circle normal
                 if circle.pointable.direction.angle_to(circle.normal) <= Leap.PI/4:
                     clockwiseness = "clockwise"
+                    color = "orange"
                 else:
                     clockwiseness = "counterclockwise"
+                    color = "blue"
 
                 # Calculate the angle swept since the last frame
                 swept_angle = 0
@@ -74,18 +78,21 @@ class TouchPointListener(Leap.Listener):
 
             if gesture.type == Leap.Gesture.TYPE_SWIPE:
                 swipe = SwipeGesture(gesture)
+                color = "black"
                 #print "  Swipe id: %d, state: %s, position: %s, direction: %s, speed: %f" % (
                         #gesture.id, self.state_names[gesture.state],
                         #swipe.position, swipe.direction, swipe.speed)
 
             if gesture.type == Leap.Gesture.TYPE_KEY_TAP:
                 keytap = KeyTapGesture(gesture)
+                color = "green"
                 #print "  Key Tap id: %d, %s, position: %s, direction: %s" % (
                         #gesture.id, self.state_names[gesture.state],
                         #keytap.position, keytap.direction )
 
             if gesture.type == Leap.Gesture.TYPE_SCREEN_TAP:
                 screentap = ScreenTapGesture(gesture)
+                color = "red"
                 #print "  Screen Tap id: %d, %s, position: %s, direction: %s" % (
                         #gesture.id, self.state_names[gesture.state],
                         #screentap.position, screentap.direction )
@@ -133,6 +140,19 @@ class PaintBox(Frame):
         self.paintCanvas = Canvas( self, width = screenWidth, height = screenHeight )
         self.paintCanvas.pack()
         self.painter.set_canvas(self.paintCanvas)
+
+        # create second Canvas component
+        self.backgroundCanvas = Canvas( self, width = screenWidth, height = screenHeight)
+        self.paintCanvas.pack()
+        self.painter.set_canvas(self.paintCanvas)
+
+root = Tk()
+im = Image.open('images/leatherBackground.png')
+im = im.resize((screenWidth,screenHeight), Image.BILINEAR)
+tkimage = ImageTk.PhotoImage(im)
+myvar = Tkinter.Label(root,image = tkimage)
+#myvar.place(x=0, y=0, relwidth=1, relheight=1)
+
 
 def main():
     PaintBox().mainloop()

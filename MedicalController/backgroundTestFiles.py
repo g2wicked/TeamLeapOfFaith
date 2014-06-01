@@ -14,10 +14,11 @@ class Example(Frame):
         self.pack(fill=BOTH, expand=1)
 
 root = Tk()
-root.geometry("1111x675+300+300")
+root.geometry("1111x675")
 app = Example(root)
 
-im = Image.open('images/background.png')
+im = Image.open('images/leatherBackground.png')
+im = im.resize((1200,800), Image.BILINEAR)
 tkimage = ImageTk.PhotoImage(im)
 myvar=Tkinter.Label(root,image = tkimage)
 myvar.place(x=0, y=0, relwidth=1, relheight=1)
